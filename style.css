@@ -1,0 +1,257 @@
+/* ============================
+   Global Styles
+============================ */
+body {
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif, sans-serif;
+    scroll-behavior: smooth;
+}
+
+/* ============================
+   Navigation
+============================ */
+nav {
+    background: #222;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 30px;
+    position: sticky;
+    top: 0;
+    max-width: 1600px;
+}
+
+/* Fix anchor scrolling for sticky navbar */
+html {
+    scroll-padding-top: 60px; /* same as navbar height */
+}
+
+/* OR alternative using pseudo-element */
+/*
+.section::before {
+    content: "";
+    display: block;
+    height: 60px;          / * navbar height * /
+    margin-top: -60px;     / * negative of navbar height * /
+    visibility: hidden;
+}
+*/
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 70px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+/* ============================
+   Sections General
+============================ */
+.section {
+    min-height: 90vh;
+    padding: 60px 20px;
+    box-sizing: border-box;
+}
+
+.light {
+    background: #f4f4f4;
+}
+
+.section h2 {
+    font-family: 'Poppins', Arial, sans-serif;
+    font-weight: 600;
+    font-size: 32px;
+    color: #222;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.section h2 span {
+    font-size: 1.2em;
+}
+
+/* ============================
+   Home Section
+============================ */
+.home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #ff9502, #ffe14b, #000000);
+    color: #333;
+}
+
+.home h1 span {
+    color: rgb(35, 143, 41);
+}
+
+.home button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    background: #222;
+    color: white;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.home button:hover {
+    background: #444;
+}
+
+/* ============================
+   About Me Section
+============================ */
+
+/* Container for Box + Photo */
+.about-container {
+    display: flex;
+    align-items: center;       /* Vertically center box + photo */
+    justify-content: center;   /* Center horizontally in section */
+    gap: 0;                    /* Remove gap between box and photo */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* About Box (left) */
+.about-box {
+    flex: 3;
+    padding: 20px;
+    background: #ffe4b3;
+    border-radius: 10px 0 0 10px; /* Rounded only left side */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.about-box p {
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+.about-box strong {
+    color: #333;
+}
+
+/* Photo (right) */
+.about-photo {
+    flex: 1;
+    display: flex;             /* Make flex container */
+    justify-content: center;   /* Center photo horizontally */
+    align-items: center;       /* Center photo vertically */
+}
+
+.about-photo img {
+    max-width: 150px;          /* Adjust as needed */
+    width: 100%;
+    height: auto;              /* Keep aspect ratio */
+    border-radius: 0 10px 10px 0; /* Rounded only right side */
+    object-fit: cover;
+    display: block;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Paragraph under box + photo */
+.about-description {
+    max-width: 1150px;
+    margin: 20px auto 0;
+    font-size: 18px;
+    line-height: 1.6;
+    text-align: justify;
+    color: #050505;
+}
+
+/* ============================
+   Skills Section
+============================ */
+.skills-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+    padding: 0;
+    top: 0;
+}
+
+.skills-list li {
+    list-style: none;
+    background: #ffe4b3;
+    padding: 10px;
+}
+
+/* Skills image styling */
+.skills-image {
+    display: block;           /* make it block to center */
+    margin: 10px auto 20px;   /* 10px top, auto horizontal, 20px bottom */
+    max-width: 400px;         /* adjust image size */
+    width: 100%;              /* responsive */
+    height: auto;
+}
+
+
+/* ============================
+   Projects Section
+============================ */
+.project {
+    background: #ffe4b3;
+    margin: 15px auto;
+    padding: 20px;
+    width: 60%;
+}
+
+/* ============================
+   Contact Section
+============================ */
+#contact {
+    min-height: 90vh; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  /* vertically center content */
+    align-items: center;      /* horizontally center */
+    padding: 60px 20px;
+    box-sizing: border-box;
+    background: #ffe4b3;
+}
+
+#contact form {
+    max-width: 400px;
+    width: 100%;
+}
+
+#contact form button {
+    display: block;
+    margin: 20px auto 0;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    background: #5a5959;
+    color: white;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+/* ============================
+   Inputs & Textarea
+============================ */
+input, textarea {
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+}
+
+/* ============================
+   Responsive Adjustments
+============================ */
+.about-description p,
+.about-box {
+    width: 90%;
+}
+
+.section-content {
+    justify-content: flex-start;
+    padding-top: 20px;
+}
